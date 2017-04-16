@@ -211,6 +211,8 @@ chrome.extension.sendMessage({}, function(response) {
         }
 
         // REFACTOR Extract main keystroke dispatcher to make it easier to change
+        // SMELL Relies on coercive equals: keyCode is a string, but
+        // settings are integers.
         if (keyCode == tc.settings.rewindKeyCode) {
           runAction('rewind', document, true)
         } else if (keyCode == tc.settings.advanceKeyCode) {
