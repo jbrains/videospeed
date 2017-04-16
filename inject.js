@@ -287,6 +287,8 @@ chrome.extension.sendMessage({}, function(response) {
   }
 
   // SMELL 'keyboard' appears unused here. Its value is always "true".
+  // REFACTOR Rename runAction(), since it is accurate but vague.
+  // This appears to "run all for all videos in document".
   function runAction(action, document, keyboard) {
     var videoTags = document.getElementsByTagName('video');
     videoTags.forEach = Array.prototype.forEach;
