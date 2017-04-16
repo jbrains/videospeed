@@ -294,6 +294,8 @@ chrome.extension.sendMessage({}, function(response) {
 
       showController(controller);
 
+      // SMELL Why reimplement method calls here by dispatching on
+      // action name as a string?
       if (!v.classList.contains('vsc-cancelled')) {
         if (action === 'rewind') {
           v.currentTime -= tc.settings.rewindTime;
