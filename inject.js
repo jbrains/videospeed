@@ -188,6 +188,7 @@ chrome.extension.sendMessage({}, function(response) {
         document.head.appendChild(link);
       }
 
+      // REFACTOR Extract main keydown listener to make it much easier to test
       document.addEventListener('keydown', function(event) {
         var keyCode = event.keyCode;
 
@@ -209,6 +210,7 @@ chrome.extension.sendMessage({}, function(response) {
           return false;
         }
 
+        // REFACTOR Extract main keystroke dispatcher to make it easier to change
         if (keyCode == tc.settings.rewindKeyCode) {
           runAction('rewind', document, true)
         } else if (keyCode == tc.settings.advanceKeyCode) {
