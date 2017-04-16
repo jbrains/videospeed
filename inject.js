@@ -284,6 +284,7 @@ chrome.extension.sendMessage({}, function(response) {
       });
   }
 
+  // SMELL 'keyboard' appears unused here. Its value is always "true".
   function runAction(action, document, keyboard) {
     var videoTags = document.getElementsByTagName('video');
     videoTags.forEach = Array.prototype.forEach;
